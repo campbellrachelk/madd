@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora&family=PT+Serif:ital@1&family=Playfair+Display&display=swap" rel="stylesheet">
+
+
+    <title>Madd Financials</title>
+
+<style>
+    
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            margin-bottom: -5%;
+            
+        }
+
+        to {
+            margin-bottom: 0%;
+            
+        }
+        }
+
+    img {
+        max-width:100%;
+        display:block;
+        margin:0 auto;
+    }
+
+    nav ul {
+        text-align: right;
+        align-self: center;
+    }
+
+    nav li {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    nav li a {
+        text-decoration: none;
+        color: #1b3fa8;
+    }
+
+    nav {
+        
+    }
+
+    body {
+        font-family: 'Lora', serif;
+        letter-spacing:1px;
+    }
+
+    .social {
+        display: grid;
+        grid-template-columns: min-content 24px;
+        align-items: center;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+        border-bottom: 1px solid black;
+        padding: 2px;
+        width: fit-content;
+        font-size: 3rem;
+    }
+
+    .subhead {
+        font-family: 'PT Serif', serif;
+        font-style:italic;
+    }
+
+
+    @media only screen and (min-width:600px) {
+        main {
+            display:grid;
+            grid-template-columns: 60% 1fr;
+            align-items: center;
+            margin-top: 8rem;
+        }
+
+        .content {
+            max-width:1000px;
+            margin: 0 auto;
+            height: 80vh;
+
+        }
+
+        .logo {
+            max-width:100px;
+        }
+
+        .portrait {
+            max-width:300px;
+            border-radius: 0px 150px;
+            animation: fadeInAnimation ease 2.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        nav {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+        }
+
+        
+    }
+</style>
+
+
+</head>
+<body>
+    <nav>
+        <a href="#home"><img class="logo" src="logo.png" alt="logo"></a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <main id="home">
+            <header>
+                <h1>Welcome.</h1>
+                <p>Some information will go here with a general overview and some keywords. Tax information et cetera et cetera. Maybe some information about you, how you started, your intention statement, etc.</p>
+
+                <div class="social">
+                    <p>Instagram</p>
+                    <a href=""><img src="arrow_outward_FILL0_wght400_GRAD0_opsz48.svg" alt="arrow"></a>
+                </div>
+            </header>
+
+            <img class="portrait" src="madd.png" alt="portrait of founder, Jazmine Rawls">
+        </main>
+
+    </div>
+</body>
+</html>
