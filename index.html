@@ -39,6 +39,12 @@
         margin:0 auto;
     }
 
+
+    .blurbs img {
+        margin:unset;
+        width:98%;
+    }
+
     .forms img {
         display: inline;
         max-width: 30px;
@@ -56,13 +62,13 @@
         margin: 10px;
     }
 
-    nav li a {
-        text-decoration: none;
-        color: #1b3fa8;
-    }
-
     nav {
         
+    }
+
+    a {
+        color:#0034BB;
+        text-decoration:none;
     }
 
     .portrait {
@@ -130,6 +136,18 @@
 
 
     @media only screen and (min-width:600px) {
+        article.blurbs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 4px;
+        }
+
+        .blurbs {
+            height: 330px;
+            overflow: hidden;
+        }
+
+
         nav ul {
             text-align: right;
             align-self: center;
@@ -205,6 +223,26 @@
         <section id="about">
             <h2>Our Story</h2>
             <p>We could make the main landing blurb a company overview blurb, including services offered, and then make this one an 'about us' with information on you, why you got started, that kind of thing. Or we could do the reverse. I personally like the idea of doing the reverse, since I like the idea of having your photo on the landing page. I could also see using your photo in the 'about us' since you are the founder. Up to you how you want to present your brand.</p>
+
+           <article class="blurbs">
+                <div class="blurb">
+                    <h3 class="subhead">Subhead</h3>
+                    <p>Some information about a service you offer that relates to taking care of things for people</p>
+                    <img src="accountant.webp" alt="accountant">
+                </div>
+
+                <div class="blurb">
+                    <h3 class="subhead">Subhead</h3>
+                    <p>Some information about a service you offer that relates to taking care of things for people</p>
+                    <img src="tax1.jpeg" alt="tax">
+                </div>
+
+                <div class="blurb">
+                    <h3 class="subhead">Subhead</h3>
+                    <p>Some information about a service you offer that relates to taking care of things for people</p>
+                    <img src="ocean.jpeg" alt="ocean">
+                </div>
+            </article>
         </section>
 
 
