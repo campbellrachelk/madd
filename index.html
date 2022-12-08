@@ -11,7 +11,10 @@
     <title>Madd Financials</title>
 
 <style>
-    
+    html {
+        scroll-behavior: smooth;
+    }
+
     @keyframes fadeInAnimation {
         0% {
             opacity: 0;
@@ -39,10 +42,24 @@
         margin:0 auto;
     }
 
+    button {
+        padding: 7px;
+        background-color: #0034bb;
+        border: 1px solid black;
+        vertical-align: middle;
+        border-radius: 5px;
+        font-family: 'Lora', serif;
+        font-size: 15px;
+        color: white;
+    }
 
     .blurbs img {
         margin:unset;
         width:98%;
+    }
+
+    .forms {
+        text-align:center;
     }
 
     .forms img {
@@ -51,15 +68,24 @@
         vertical-align: middle;
     }
 
+    .headBar {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+    }
+
     nav ul {
         text-align: center;
         padding-left:0;
+        padding-right:10px;
         align-self: center;
     }
 
     nav li {
-        display: inline-block;
+        display: block;
         margin: 10px;
+        text-align: right;
+        border-bottom: 1px solid #a85f3b;
+
     }
 
     nav {
@@ -74,6 +100,7 @@
     .portrait {
         max-width:250px;
         border-radius:20px;
+        box-shadow: 6px 8px 16px -6px #7a7a7a ;
         margin:1rem auto;
     }
 
@@ -101,12 +128,35 @@
         margin:0 auto;
     }
 
+    .hamburger {
+        display:inline;
+        width: 50px;
+        padding: 20px;
+    }
+
+    .hamburgerNav {
+        text-align:right;
+    }
+
+    nav {
+        display:none;
+    }
+
     h1, h2 {
         font-family: 'Playfair Display', serif;
         border-bottom: 1px solid #a85f3b;
         padding: 2px;
-        width: fit-content;
         font-size: 3rem;
+    }
+
+    h1 {
+        margin:5px;
+        width: fit-content;
+    }
+
+    h2 {
+        margin: 5px auto;
+        width:fit-content;
     }
 
     main, section {
@@ -134,12 +184,18 @@
         color:black;
     }
 
+    .logo {
+        max-width:50px;
+        display:inline;
+        padding:10px;
+    }
+
 
     @media only screen and (min-width:600px) {
         article.blurbs {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 4px;
+            grid-gap: 25px;
         }
 
         .blurbs {
@@ -147,10 +203,19 @@
             overflow: hidden;
         }
 
+        .hamburger {
+            display:none;
+        }
 
         nav ul {
             text-align: right;
             align-self: center;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 10px;
+            border-bottom:none;
         }
 
         main {
@@ -159,8 +224,18 @@
             align-items: center;
         }
 
-        main, section {
-            min-height:85vh;
+        main {
+            min-height:80vh;
+        }
+
+        section {
+            min-height: 100vh;
+            display: grid;
+            align-content: center;
+        }
+
+        section.about {
+            grid-gap:2rem;
         }
 
         .content {
@@ -184,6 +259,10 @@
 
         nav {
             display: grid;
+        }
+
+        .headBar {
+            display: grid;
             grid-template-columns: 100px 1fr;
         }
 
@@ -194,15 +273,26 @@
 
 </head>
 <body>
-    <nav>
-        <a href="#home"><img class="logo" src="logo.png" alt="logo"></a>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#forms">Forms</a></li>
-            <li><a href="#faq">FAQs</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
+
+
+    <div class="headBar">
+        <a href="#home"><img class="logo" src="mlogo.png" alt="logo"></a>
+
+        
+        <div class="hamburgerNav">
+            <img class="hamburger" src="hamburger.svg" alt="hamburger menu drop down">
+
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#forms">Forms</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
 
     <div class="content">
         <main id="home">
@@ -210,17 +300,18 @@
                 <h1>Welcome.</h1>
                 <p>Some information will go here with a general overview and some keywords. Tax information et cetera et cetera. Maybe some information about you, how you started, your intention statement, etc.</p>
 
-                <div class="social">
+                <!-- <div class="social">
                     <p>Instagram</p>
                     <a href=""><img src="arrow.svg" alt="arrow"></a>
-                </div>
+                </div> -->
+                <button href="calendlylink" target="_blank">Schedule Now</button>
             </header>
 
-            <img class="portrait" src="madd.png" alt="portrait of founder, Jazmine Rawls">
+            <img class="portrait" src="conf.jpg" alt="portrait of founder, Jazmine Rawls">
         </main>
 
 
-        <section id="about">
+        <section id="about" class="about">
             <h2>Our Story</h2>
             <p>We could make the main landing blurb a company overview blurb, including services offered, and then make this one an 'about us' with information on you, why you got started, that kind of thing. Or we could do the reverse. I personally like the idea of doing the reverse, since I like the idea of having your photo on the landing page. I could also see using your photo in the 'about us' since you are the founder. Up to you how you want to present your brand.</p>
 
@@ -274,4 +365,22 @@
     </footer>
 
 </body>
+
+<script>
+            // hamburger menu for mobile 
+
+            let hamburger = document.querySelector('.hamburger');
+        let navigation = document.querySelector('nav');
+        hamburger.addEventListener('click', menuDrop);
+
+        function menuDrop(){
+
+            if (navigation.style.display !== 'block') {
+                navigation.style.display = 'block'
+            }  else {
+                navigation.style.display = 'none';
+            } 
+        }
+
+</script>
 </html>
